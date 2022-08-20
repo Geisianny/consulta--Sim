@@ -5109,3 +5109,251 @@ Completed 200 OK in 4166ms (Views: 2226.0ms | ActiveRecord: 0.0ms | Allocations:
 Completed 200 OK in 4074ms (Views: 2286.2ms | ActiveRecord: 0.0ms | Allocations: 4680)
 
 
+Started GET "/" for 127.0.0.1 at 2022-08-20 16:59:10 -0300
+  [1m[35m (154.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1193.2ms | Allocations: 535)
+Completed 200 OK in 2943ms (Views: 1531.4ms | ActiveRecord: 0.0ms | Allocations: 3703)
+
+
+Started GET "/menu" for 127.0.0.1 at 2022-08-20 17:10:17 -0300
+Processing by MenuController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering menu/index.html.erb within layouts/application
+  Rendered menu/index.html.erb within layouts/application (Duration: 2036.9ms | Allocations: 388)
+  Rendered layout layouts/application.html.erb (Duration: 16561.2ms | Allocations: 25422)
+Completed 200 OK in 18856ms (Views: 17648.0ms | Allocations: 26450)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-20 17:12:02 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/consulta/index.html.erb:6
+  [1m[36mConsultum Load (2.0ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/index.html.erb within layouts/application (Duration: 1325.1ms | Allocations: 1998)
+  Rendered layout layouts/application.html.erb (Duration: 1403.8ms | Allocations: 3436)
+Completed 200 OK in 14227ms (Views: 1487.8ms | ActiveRecord: 163.2ms | Allocations: 6505)
+
+
+Started GET "/consulta/new" for 127.0.0.1 at 2022-08-20 17:12:29 -0300
+Processing by ConsultaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/new.html.erb within layouts/application
+  Rendered consulta/_form.html.erb (Duration: 6298.1ms | Allocations: 6375)
+  Rendered consulta/new.html.erb within layouts/application (Duration: 6377.7ms | Allocations: 6715)
+  Rendered layout layouts/application.html.erb (Duration: 6380.3ms | Allocations: 6806)
+Completed 500 Internal Server Error in 18170ms (ActiveRecord: 18.6ms | Allocations: 30709)
+
+
+  
+ActionView::Template::Error (undefined method `collect_select' for #<ActionView::Helpers::FormBuilder:0x0000027309b6a840 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x0000000000d098>, @object=#<Consultum id: nil, data: nil, horario: nil, Paciente_id: nil, Medico_id: nil, created_at: nil, updated_at: nil>, @object_name="consultum", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>
+Did you mean?  collection_select):
+    23: 
+    24:   <div>
+    25:     <%= form.label :Paciente_id, style: "display: block" %>
+    26:     <%= form.collect_select(:paciente_id, Paciente.all, :id, :nomeCompleto, include_blank: "Escolha um paciente ")%>
+    27:   </div>
+    28: 
+    29:   <div>
+  
+app/views/consulta/_form.html.erb:26
+app/views/consulta/_form.html.erb:1
+app/views/consulta/new.html.erb:3
+Started GET "/consulta/new" for 127.0.0.1 at 2022-08-20 17:15:03 -0300
+Processing by ConsultaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/new.html.erb within layouts/application
+  Rendered consulta/_form.html.erb (Duration: 18.1ms | Allocations: 3930)
+  Rendered consulta/new.html.erb within layouts/application (Duration: 31.3ms | Allocations: 4245)
+  Rendered layout layouts/application.html.erb (Duration: 59.0ms | Allocations: 4340)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.0ms | Allocations: 5516)
+
+
+  
+ActionView::Template::Error (undefined method `collect_select' for #<ActionView::Helpers::FormBuilder:0x0000027309bebf30 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x0000000000d480>, @object=#<Consultum id: nil, data: nil, horario: nil, Paciente_id: nil, Medico_id: nil, created_at: nil, updated_at: nil>, @object_name="consultum", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>
+Did you mean?  collection_select):
+    23: 
+    24:   <div>
+    25:     <%= form.label :Paciente_id, style: "display: block" %>
+    26:     <%= form.collect_select(:Paciente_id, Paciente.all, :id, :nomeCompleto, include_blank: "Escolha um paciente ")%>
+    27:   </div>
+    28: 
+    29:   <div>
+  
+app/views/consulta/_form.html.erb:26
+app/views/consulta/_form.html.erb:1
+app/views/consulta/new.html.erb:3
+Started GET "/consulta/new" for 127.0.0.1 at 2022-08-20 17:15:48 -0300
+Processing by ConsultaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/new.html.erb within layouts/application
+  [1m[36mPaciente Load (1.0ms)[0m  [1m[34mSELECT "pacientes".* FROM "pacientes"[0m
+  ↳ app/views/consulta/_form.html.erb:26
+  [1m[36mMedico Load (0.6ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos"[0m
+  ↳ app/views/consulta/_form.html.erb:31
+  Rendered consulta/_form.html.erb (Duration: 528.0ms | Allocations: 14880)
+  Rendered consulta/new.html.erb within layouts/application (Duration: 533.2ms | Allocations: 15224)
+  Rendered layout layouts/application.html.erb (Duration: 596.4ms | Allocations: 16834)
+Completed 200 OK in 625ms (Views: 610.3ms | ActiveRecord: 1.6ms | Allocations: 18013)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-20 17:16:04 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[36mConsultum Load (0.7ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 2243)
+Completed 200 OK in 58ms (Views: 48.3ms | ActiveRecord: 0.7ms | Allocations: 2677)
+
+
+Started GET "/medicos" for 127.0.0.1 at 2022-08-20 17:16:42 -0300
+Processing by MedicosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering medicos/index.html.erb within layouts/application
+  [1m[36mMedico Load (0.9ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos"[0m
+  ↳ app/views/medicos/index.html.erb:6
+  Rendered medicos/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 2622)
+Completed 200 OK in 98ms (Views: 78.1ms | ActiveRecord: 0.9ms | Allocations: 3480)
+
+
+Started GET "/medicos/new" for 127.0.0.1 at 2022-08-20 17:16:47 -0300
+Processing by MedicosController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering medicos/new.html.erb within layouts/application
+  Rendered medicos/_form.html.erb (Duration: 111.2ms | Allocations: 2141)
+  Rendered medicos/new.html.erb within layouts/application (Duration: 114.4ms | Allocations: 2439)
+  Rendered layout layouts/application.html.erb (Duration: 128.1ms | Allocations: 3691)
+Completed 200 OK in 139ms (Views: 133.1ms | ActiveRecord: 0.0ms | Allocations: 4084)
+
+
+Started POST "/medicos" for 127.0.0.1 at 2022-08-20 17:17:04 -0300
+Processing by MedicosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "medico"=>{"nomeCompleto"=>"geisy", "cpf"=>"76567454791", "email"=>"geisy@gmail.com", "especialidade"=>"cardio", "numeroCRM"=>"1234567"}, "commit"=>"Create Medico"}
+  [1m[36mTRANSACTION (25.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (16.7ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."cpf" = ? LIMIT ?[0m  [["cpf", "76567454791"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."email" = ? LIMIT ?[0m  [["email", "geisy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."numeroCRM" = ? LIMIT ?[0m  [["numeroCRM", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering medicos/new.html.erb within layouts/application
+  Rendered medicos/_form.html.erb (Duration: 18.9ms | Allocations: 2385)
+  Rendered medicos/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 2496)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 3840)
+Completed 422 Unprocessable Entity in 799ms (Views: 44.3ms | ActiveRecord: 43.7ms | Allocations: 10613)
+
+
+Started POST "/medicos" for 127.0.0.1 at 2022-08-20 17:17:13 -0300
+Processing by MedicosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "medico"=>{"nomeCompleto"=>"geisy", "cpf"=>"76567454791", "email"=>"geisy@gmail.com", "especialidade"=>"cardio", "numeroCRM"=>"12345"}, "commit"=>"Create Medico"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."cpf" = ? LIMIT ?[0m  [["cpf", "76567454791"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."email" = ? LIMIT ?[0m  [["email", "geisy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."numeroCRM" = ? LIMIT ?[0m  [["numeroCRM", "12345"], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mMedico Create (72.9ms)[0m  [1m[32mINSERT INTO "medicos" ("nomeCompleto", "cpf", "email", "especialidade", "numeroCRM", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nomeCompleto", "geisy"], ["cpf", "76567454791"], ["email", "geisy@gmail.com"], ["especialidade", "cardio"], ["numeroCRM", "12345"], ["created_at", "2022-08-20 20:17:13.346882"], ["updated_at", "2022-08-20 20:17:13.346882"]]
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (123.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/medicos_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/medicos/2
+Completed 302 Found in 397ms (ActiveRecord: 197.5ms | Allocations: 5826)
+
+
+Started GET "/medicos/2" for 127.0.0.1 at 2022-08-20 17:17:14 -0300
+Processing by MedicosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMedico Load (32.9ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos" WHERE "medicos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/medicos_controller.rb:63:in `set_medico'
+  Rendering layout layouts/application.html.erb
+  Rendering medicos/show.html.erb within layouts/application
+  [1m[36mConsultum Load (1.6ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta" WHERE "consulta"."medico_id" = ?[0m  [["medico_id", 2]]
+  ↳ app/views/medicos/show.html.erb:29
+  Rendered medicos/show.html.erb within layouts/application (Duration: 2718.5ms | Allocations: 12880)
+  Rendered layout layouts/application.html.erb (Duration: 2762.7ms | Allocations: 14226)
+Completed 200 OK in 2891ms (Views: 2763.5ms | ActiveRecord: 34.6ms | Allocations: 15803)
+
+
+Started GET "/consulta/new" for 127.0.0.1 at 2022-08-20 17:17:26 -0300
+Processing by ConsultaController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/new.html.erb within layouts/application
+  [1m[36mPaciente Load (0.5ms)[0m  [1m[34mSELECT "pacientes".* FROM "pacientes"[0m
+  ↳ app/views/consulta/_form.html.erb:26
+  [1m[36mMedico Load (0.7ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos"[0m
+  ↳ app/views/consulta/_form.html.erb:31
+  Rendered consulta/_form.html.erb (Duration: 91.3ms | Allocations: 2648)
+  Rendered consulta/new.html.erb within layouts/application (Duration: 143.9ms | Allocations: 2755)
+  Rendered layout layouts/application.html.erb (Duration: 207.2ms | Allocations: 4010)
+Completed 200 OK in 217ms (Views: 208.4ms | ActiveRecord: 1.2ms | Allocations: 4642)
+
+
+Started POST "/consulta" for 127.0.0.1 at 2022-08-20 17:17:52 -0300
+Processing by ConsultaController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "consultum"=>{"data"=>"2022-08-20", "horario"=>"18:00", "Paciente_id"=>"2", "Medico_id"=>"2"}, "commit"=>"Create Consultum"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mPaciente Load (1.1ms)[0m  [1m[34mSELECT "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mMedico Load (0.3ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos" WHERE "medicos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mMedico Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."cpf" = ? AND "medicos"."id" != ? LIMIT ?[0m  [["cpf", "76567454791"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mMedico Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."email" = ? AND "medicos"."id" != ? LIMIT ?[0m  [["email", "geisy@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mMedico Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "medicos" WHERE "medicos"."numeroCRM" = ? AND "medicos"."id" != ? LIMIT ?[0m  [["numeroCRM", "12345"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mPaciente Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pacientes" WHERE "pacientes"."cpf" = ? AND "pacientes"."id" != ? LIMIT ?[0m  [["cpf", "12345678110"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mPaciente Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pacientes" WHERE "pacientes"."email" = ? AND "pacientes"."id" != ? LIMIT ?[0m  [["email", "michel@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mConsultum Create (65.9ms)[0m  [1m[32mINSERT INTO "consulta" ("data", "horario", "Paciente_id", "Medico_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["data", "2022-08-20"], ["horario", "2000-01-01 18:00:00"], ["Paciente_id", 2], ["Medico_id", 2], ["created_at", "2022-08-20 20:17:52.737139"], ["updated_at", "2022-08-20 20:17:52.737139"]]
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (239.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/consulta_controller.rb:29:in `block in create'
+Redirected to http://127.0.0.1:3000/consulta/1
+Completed 302 Found in 537ms (ActiveRecord: 308.9ms | Allocations: 11378)
+
+
+Started GET "/consulta/1" for 127.0.0.1 at 2022-08-20 17:17:53 -0300
+Processing by ConsultaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mConsultum Load (0.9ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta" WHERE "consulta"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:65:in `set_consultum'
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/show.html.erb within layouts/application
+  [1m[36mMedico Load (0.5ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos" WHERE "medicos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/consulta/show.html.erb:15
+  [1m[36mPaciente Load (0.6ms)[0m  [1m[34mSELECT "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/consulta/show.html.erb:20
+  Rendered consulta/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2040)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 3299)
+Completed 200 OK in 70ms (Views: 31.3ms | ActiveRecord: 2.0ms | Allocations: 4771)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-20 17:17:59 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[36mConsultum Load (0.7ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/_consultum.html.erb (Duration: 23.8ms | Allocations: 325)
+  Rendered consulta/index.html.erb within layouts/application (Duration: 568.9ms | Allocations: 11685)
+  Rendered layout layouts/application.html.erb (Duration: 607.0ms | Allocations: 13065)
+Completed 200 OK in 614ms (Views: 608.7ms | ActiveRecord: 0.7ms | Allocations: 13381)
+
+

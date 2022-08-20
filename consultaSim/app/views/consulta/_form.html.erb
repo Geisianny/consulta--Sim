@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :Paciente_id, style: "display: block" %>
-    <%= form.text_field :Paciente_id %>
+    <%= form.collection_select(:Paciente_id, Paciente.all, :id, :nomeCompleto, include_blank: "Escolha um paciente ")%>
   </div>
 
   <div>
     <%= form.label :Medico_id, style: "display: block" %>
-    <%= form.text_field :Medico_id %>
+    <%= form.collection_select(:Medico_id, Medico.all, :id, :nomeCompleto, include_blank: "Escolha um medico ")%>
   </div>
 
   <div>
