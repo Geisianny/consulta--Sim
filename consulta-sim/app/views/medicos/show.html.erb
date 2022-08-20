@@ -1,0 +1,43 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Nome completo: </strong>
+  <%= @medico.nomeCompleto %>
+</p>
+
+<p>
+  <strong>CPF: </strong>
+  <%= @medico.cpf %>
+</p>
+
+<p>
+  <strong>Email: </strong>
+  <%= @medico.email%>
+</p>
+
+<p>
+  <strong> Consultas:</strong>
+<table>
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Horario</th>
+    <th>Medico</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @medico.consultum.each do |consultum| %>
+    <tr>
+      <td><%= consultum.data %> </td>
+      <td><%= consultum.horario %></td>
+      <td><%= consultum.paciente.nomeCompleto %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
+<div>
+  <%= link_to "Editar", edit_medico_path(@medico) %> |
+  <%= link_to "voltar", medicos_path %> |
+  <%= button_to "apagar esse médico", @medico, method: :delete %>
+</div>

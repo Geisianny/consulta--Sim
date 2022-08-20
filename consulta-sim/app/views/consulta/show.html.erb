@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong> Data: </strong>
+  <%= @consultum.data%>
+</p>
+
+<p>
+  <strong> Horario: </strong>
+  <%= @consultum.horario%>
+</p>
+
+<p>
+  <strong> Medico: </strong>
+  <%= @consultum.medico.nome%>
+</p>
+
+<p>
+  <strong> Paciente: </strong>
+  <%= @consultum.paciente.nomeCompleto%>
+</p>
+
+
+
+
+<div>
+  <%= link_to "Editar", edit_consultum_path(@consultum) %> |
+  <%= link_to "voltar", consulta_path %>
+
+  <%= link_to "apagar", @consultum, method: :delete %>
+</div>

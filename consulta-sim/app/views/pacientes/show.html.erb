@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @paciente %>
+
+<p>
+  <strong>Consultas Marcadas:</strong>
+<table>
+  <thead>
+  <tr>
+    <th>Data</th>
+    <th>Horario</th>
+    <th>Medico</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @paciente.consultum.each do |consultum| %>
+    <tr>
+      <td><%= consultum.data %> </td>
+      <td><%= consultum.horario %></td>
+      <td><%= consultum.medico.nome %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>
+
+<div>
+  <%= link_to "Editar", edit_paciente_path(@paciente) %> |
+  <%= button_to "Apagar esse paciente", @paciente, method: :delete %>
+  <%= link_to "voltar", pacientes_path %>
+</div>
+
+
+
