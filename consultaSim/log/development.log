@@ -5357,3 +5357,45 @@ Processing by ConsultaController#index as HTML
 Completed 200 OK in 614ms (Views: 608.7ms | ActiveRecord: 0.7ms | Allocations: 13381)
 
 
+Started GET "/" for 127.0.0.1 at 2022-08-27 21:44:43 -0300
+Started GET "/" for 127.0.0.1 at 2022-08-27 21:44:43 -0300
+  [1m[35m (152.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1724.9ms | Allocations: 632)
+Completed 200 OK in 3773ms (Views: 2447.7ms | ActiveRecord: 0.0ms | Allocations: 4063)
+
+
+  Rendered C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1643.0ms | Allocations: 596)
+Completed 200 OK in 3638ms (Views: 2521.7ms | ActiveRecord: 0.0ms | Allocations: 4294)
+
+
+Started GET "/menu" for 127.0.0.1 at 2022-08-27 21:45:17 -0300
+Processing by MenuController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering menu/index.html.erb within layouts/application
+  Rendered menu/index.html.erb within layouts/application (Duration: 42.3ms | Allocations: 383)
+  Rendered layout layouts/application.html.erb (Duration: 7299.2ms | Allocations: 23936)
+Completed 200 OK in 7327ms (Views: 7316.5ms | ActiveRecord: 0.0ms | Allocations: 24971)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-27 21:45:36 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[36mConsultum Load (14.7ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/_consultum.html.erb (Duration: 129.2ms | Allocations: 438)
+  Rendered consulta/index.html.erb within layouts/application (Duration: 932.8ms | Allocations: 6386)
+  Rendered layout layouts/application.html.erb (Duration: 947.5ms | Allocations: 7826)
+Completed 200 OK in 1513ms (Views: 956.2ms | ActiveRecord: 17.2ms | Allocations: 10792)
+
+
+  [1m[35m (33.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
