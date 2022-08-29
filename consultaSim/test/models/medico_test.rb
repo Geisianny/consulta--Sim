@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MedicoTest < ActiveSupport::TestCase
-  
   test 'Nao deve criar um cadastro de medico sem adicionar as informacoes basicas' do
     medico = Medico.new
     assert_not medico.save
