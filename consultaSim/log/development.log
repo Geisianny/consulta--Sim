@@ -5399,3 +5399,83 @@ Completed 200 OK in 1513ms (Views: 956.2ms | ActiveRecord: 17.2ms | Allocations:
   [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-08-29 02:21:10 -0300
+Started GET "/" for 127.0.0.1 at 2022-08-29 02:21:10 -0300
+  [1m[35m (47.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 506.3ms | Allocations: 904)
+Completed 200 OK in 1456ms (Views: 895.7ms | ActiveRecord: 0.0ms | Allocations: 8122)
+
+
+  Rendered C:/Users/VAIO/.local/share/gem/ruby/3.1.0/gems/railties-7.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 579.2ms | Allocations: 1443)
+Completed 200 OK in 1545ms (Views: 1022.7ms | ActiveRecord: 0.0ms | Allocations: 8316)
+
+
+Started GET "/menu" for 127.0.0.1 at 2022-08-29 02:21:34 -0300
+Processing by MenuController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering menu/index.html.erb within layouts/application
+  Rendered menu/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 1508.4ms | Allocations: 24499)
+Completed 200 OK in 1521ms (Views: 1517.1ms | ActiveRecord: 0.0ms | Allocations: 25868)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-29 02:21:40 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[36mConsultum Load (15.2ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/_consultum.html.erb (Duration: 257.6ms | Allocations: 601)
+  Rendered consulta/index.html.erb within layouts/application (Duration: 1233.3ms | Allocations: 10309)
+  Rendered layout layouts/application.html.erb (Duration: 1242.2ms | Allocations: 11749)
+Completed 200 OK in 1438ms (Views: 1234.0ms | ActiveRecord: 16.8ms | Allocations: 16996)
+
+
+Started GET "/consulta/1" for 127.0.0.1 at 2022-08-29 02:21:46 -0300
+Processing by ConsultaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mConsultum Load (19.6ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta" WHERE "consulta"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/consulta_controller.rb:65:in `set_consultum'
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/show.html.erb within layouts/application
+  [1m[36mMedico Load (0.4ms)[0m  [1m[34mSELECT "medicos".* FROM "medicos" WHERE "medicos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/consulta/show.html.erb:15
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/consulta/show.html.erb:20
+  Rendered consulta/show.html.erb within layouts/application (Duration: 435.3ms | Allocations: 22584)
+  Rendered layout layouts/application.html.erb (Duration: 446.7ms | Allocations: 23931)
+Completed 200 OK in 554ms (Views: 445.5ms | ActiveRecord: 22.7ms | Allocations: 26965)
+
+
+Started GET "/consulta" for 127.0.0.1 at 2022-08-29 02:21:54 -0300
+Processing by ConsultaController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering consulta/index.html.erb within layouts/application
+  [1m[36mConsultum Load (0.4ms)[0m  [1m[34mSELECT "consulta".* FROM "consulta"[0m
+  ↳ app/views/consulta/index.html.erb:6
+  Rendered consulta/_consultum.html.erb (Duration: 0.5ms | Allocations: 92)
+  Rendered consulta/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1061)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2316)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 2655)
+
+
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (36.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (321.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (376.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
