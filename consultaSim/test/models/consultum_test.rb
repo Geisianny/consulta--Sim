@@ -19,7 +19,7 @@ class ConsultumTest < ActiveSupport::TestCase
 
     assert medico.save
 
-    consulta = Consultum.new horario: " 16:00", paciente_id: paciente.id, medico_id: medico.id
+    consulta = Consultum.new horario: " 16:00", medico_id: medico.id
 
     assert_not consulta.save
   end
