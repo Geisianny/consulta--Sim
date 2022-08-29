@@ -23,15 +23,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_024653) do
   end
 
   create_table "enderecos", force: :cascade do |t|
-    t.integer "paciente_id"
     t.string "cep"
     t.string "cidade"
     t.string "bairro"
     t.string "logradouro"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "paciente_id", null: false
     t.string "complemento"
-    t.index ["paciente_id"], name: "index_enderecos_on_paciente_id", unique: true
+    t.index ["paciente_id"], name: "index_enderecos_on_paciente_id"
   end
 
   create_table "medicos", force: :cascade do |t|

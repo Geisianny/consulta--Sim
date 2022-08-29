@@ -8,7 +8,7 @@ class MedicoTest < ActiveSupport::TestCase
 
   test 'Deve criar um cadastro de medico corretamente' do
     medico = Medico.new nomeCompleto: 'Geisianny teste', cpf: '12345678910', email: 'geisiannyteste@gmail.com',
-                        especialidade: 'neuro',crm:'12345'
+                        especialidade: 'neuro',numeroCRM:'12345'
     assert medico.save
   end
 
