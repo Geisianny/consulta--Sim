@@ -6,9 +6,9 @@ class ConsultumTest < ActiveSupport::TestCase
                             cpf: "99999999999", email: "paciente1@gmail.com", endereco_attributes:{cidade: "Sao Paulo",
        logradouro: "Rua 4", complemento: "casa", bairro: "Flores", cep:"88888888"}
 
-    assert paciente.save
+    assert_not paciente.save
 
-    consulta = Consultum.new data:"13/09/2022", horario: "15:00", paciente_id: paciente.id
+    consulta = Consultum.new data:"13/09/2022", horario: "15:00", Paciente_id: paciente.id
     
     assert_not consulta.save
   end
@@ -19,7 +19,7 @@ class ConsultumTest < ActiveSupport::TestCase
 
     assert medico.save
 
-    consulta = Consultum.new horario: " 16:00", medico_id: medico.id
+    consulta = Consultum.new horario: " 16:00", Medico_id: medico.id
 
     assert_not consulta.save
   end
