@@ -3,10 +3,10 @@ require "test_helper"
 class ConsultumTest < ActiveSupport::TestCase
   test "Nao deve criar uma consulta sem medico" do
     paciente = Paciente.new nomeCompleto: "Paciente 1",dataDeNascimento: "28/08/2000",
-                            cpf: "99999999999", email: "paciente1@gmail.com", endereco_attributes:{cidade: "Sao Paulo",
-       logradouro: "Rua 4", complemento: "casa", bairro: "Flores", cep:"88888888"}
+                            cpf: "11111111111", email: "paciente1@gmail.com", endereco_attributes:{cidade: "Sao Paulo",
+       logradouro: "Rua 4", complemento: "casa ", bairro: "Flores", cep:"88888888"}
 
-    assert_not paciente.save
+    assert paciente.save
 
     consulta = Consultum.new data:"13/09/2022", horario: "15:00", Paciente_id: paciente.id
     
